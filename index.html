@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simple AI</title>
+  <title>Simple Chat AI</title>
+  <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
 <body>
-  <h1>Simple AI</h1>
-  <button onclick="getUserInput()">Click here to interact with the AI</button>
+  <h1>Simple Chat AI</h1>
+  <div id="chat-container"></div>
+  <input type="text" id="user-input" placeholder="Your message">
+  <button onclick="sendMessage()">Send</button>
 </body>
 </html>
