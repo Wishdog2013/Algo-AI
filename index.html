@@ -2,88 +2,19 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Login Menu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      padding: 20px;
-    }
-
-    h1 {
-      color: #333;
-      text-align: center;
-      background-color: #fff;
-      padding: 10px;
-      border-radius: 5px;
-    }
-
-    .login-container {
-      max-width: 300px;
-      margin: 0 auto;
-      background-color: #fff;
-      border-radius: 5px;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .form-group {
-      margin-bottom: 10px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-
-    .form-group input {
-      width: 100%;
-      padding: 5px;
-      border: 1px solid #ccc;
-      border-radius: 3px;
-    }
-
-    .form-group button {
-      background-color: #1e88e5;
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-  </style>
+  <title>Algo-AI</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-  <h1>Login Menu</h1>
-  <div class="login-container">
-    <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" id="email" placeholder="Enter your email">
-    </div>
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" placeholder="Enter your password">
-    </div>
-    <div class="form-group">
-      <button onclick="login()">Login</button>
-    </div>
+  <h1>Algo-AI</h1>
+  <button id="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
+  <div class="chat-container" id="chat-container"></div>
+  <div class="input-container">
+    <input type="text" class="user-input" id="user-input" placeholder="Your message">
+    <button class="send-button" onclick="sendMessage()">Send</button>
   </div>
+  <a href="https://wishdog2013.github.io/Algo-AI-Login/">Login</a>
 
-  <script>
-    function login() {
-      // Get input values
-      var email = document.getElementById('email').value;
-      var password = document.getElementById('password').value;
-
-      // Perform login validation
-      if (email && password) {
-        alert('Login successful!');
-        // Redirect to another page or perform additional actions
-      } else {
-        alert('Invalid email or password.');
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
