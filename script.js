@@ -1,6 +1,28 @@
-// Define a function that takes an input and returns an output
+function toggleDarkMode() {
+  const body = document.body;
+  body.classList.toggle('dark-mode');
+}
+
+function sendMessage() {
+  const inputElement = document.getElementById('user-input');
+  const message = inputElement.value;
+  inputElement.value = '';
+  displayMessage('User', message);
+  const output = simpleAI(message);
+  displayMessage('AI', output);
+}
+
+function displayMessage(sender, message) {
+  const chatContainer = document.getElementById('chat-container');
+  chatContainer.style.display = 'block';
+  const messageElement = document.createElement('div');
+  messageElement.classList.add('message');
+  messageElement.classList.add(sender.toLowerCase() + '-message');
+  messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+  chatContainer.appendChild(messageElement);
+}
+
 function simpleAI(input) {
-  // Define your algorithm logic here
   if (input.toLowerCase().includes('hello')) {
     return 'Hi there!';
   } else if (input.toLowerCase().includes('how are you')) {
@@ -11,21 +33,3 @@ function simpleAI(input) {
     return 'I am sorry, I did not understand that.';
   }
 }
-
-// Get user input and interact with the AI
-function chatWithAI() {
-  const input = prompt('You: ');
-  const output = simpleAI(input);
-  displayMessage('AI:', output);
-}
-
-// Display the message in the chat window
-function displayMessage(sender, message) {
-  const chatContainer = document.getElementById('chat-container');
-  const messageElement = document.createElement('div');
-  messageElement.innerHTML = `<strong>${sender}</strong>: ${message}`;
-  chatContainer.appendChild(messageElement);
-}
-
-// Call the function to start the interaction
-chatWithAI();
