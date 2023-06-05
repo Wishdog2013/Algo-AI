@@ -25,11 +25,12 @@ function displayMessage(sender, message) {
 function simpleAI(input) {
   const responses = [
     "I'm not sure I understand.",
-    "Could you please provide more information?",
+    "Have a good day!",
     "That's interesting. Tell me more.",
     "I'm sorry, I don't have the answer to that.",
     "Let me think about it for a moment.",
-    "I appreciate your input."
+    "I appreciate your input.",
+    "make a issue to add a response if you'd like to!"
   ];
   const randomIndex = Math.floor(Math.random() * responses.length);
   return responses[randomIndex];
