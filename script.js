@@ -9,7 +9,7 @@ function sendMessage() {
   inputElement.value = '';
   displayMessage('User', message);
   const output = simpleAI(message);
-  displayMessage('AI', output);
+  displayMessage('Algo', output);
 }
 
 function displayMessage(sender, message) {
