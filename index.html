@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Algo-AI</title>
+  <title>Login Menu</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,39 +18,33 @@
       border-radius: 5px;
     }
 
-    .chat-container {
+    .login-container {
+      max-width: 300px;
+      margin: 0 auto;
       background-color: #fff;
       border-radius: 5px;
-      border: 1px solid #ccc;
-      max-width: 500px;
-      margin: 0 auto;
       padding: 20px;
-      display: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
-    .message {
+    .form-group {
       margin-bottom: 10px;
     }
 
-    .user-message {
-      color: #333;
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
     }
 
-    .algo-message {
-      color: #1e88e5;
-    }
-
-    .input-container {
-      display: flex;
-      margin-top: 20px;
-    }
-
-    .user-input {
-      flex-grow: 1;
+    .form-group input {
+      width: 100%;
       padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
     }
 
-    .send-button {
+    .form-group button {
       background-color: #1e88e5;
       color: #fff;
       border: none;
@@ -58,25 +52,38 @@
       border-radius: 3px;
       cursor: pointer;
     }
-
-    .dark-mode {
-      background-color: #333;
-      color: #fff;
-    }
   </style>
-  <script src="script.js"></script>
 </head>
 <body>
-  <h1>Algo-AI</h1>
-  <button id="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
-  <div class="chat-container" id="chat-container"></div>
-  <div class="input-container">
-    <input type="text" class="user-input" id="user-input" placeholder="Your message">
-    <button class="send-button" onclick="sendMessage()">Send</button>
+  <h1>Login Menu</h1>
+  <div class="login-container">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter your password">
+    </div>
+    <div class="form-group">
+      <button onclick="login()">Login</button>
+    </div>
   </div>
 
   <script>
-    // JavaScript code goes here
+    function login() {
+      // Get input values
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+
+      // Perform login validation
+      if (email && password) {
+        alert('Login successful!');
+        // Redirect to another page or perform additional actions
+      } else {
+        alert('Invalid email or password.');
+      }
+    }
   </script>
 </body>
 </html>
