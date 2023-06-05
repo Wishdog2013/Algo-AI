@@ -47,3 +47,28 @@ function simpleAI(input) {
   ];
   const randomIndex = Math.floor(Math.random() * responses.length);
   return responses[randomIndex];
+}
+
+function sendToWebhook(name, email, message) {
+  const webhookUrl = process.env.responsetracking;
+
+  const requestData = {
+    username: "Algo-AI",
+    avatar_url: "https://example.com/avatar.png", // Optional: Customize the bot's avatar
+    content: `New Message:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
+  };
+
+  fetch(webhookUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(requestData)
+  })
+    .then(function(response) {
+      console.log("Message sent to Discord webhook:", response);
+    })
+    .catch(function(error) {
+      console.error("Failed to send message to Discord webhook:", error);
+    });
+}
