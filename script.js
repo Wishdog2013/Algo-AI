@@ -23,13 +23,14 @@ function displayMessage(sender, message) {
 }
 
 function simpleAI(input) {
-  if (input.toLowerCase().includes('hello')) {
-    return 'Hi there!';
-  } else if (input.toLowerCase().includes('how are you')) {
-    return 'I am an AI, so I do not have feelings, but thanks for asking!';
-  } else if (input.toLowerCase().includes('bye')) {
-    return 'Goodbye!';
-  } else {
-    return 'I am sorry, I did not understand that.';
-  }
+  const responses = [
+    "I'm not sure I understand.",
+    "Could you please provide more information?",
+    "That's interesting. Tell me more.",
+    "I'm sorry, I don't have the answer to that.",
+    "Let me think about it for a moment.",
+    "I appreciate your input."
+  ];
+  const randomIndex = Math.floor(Math.random() * responses.length);
+  return responses[randomIndex];
 }
