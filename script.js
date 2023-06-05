@@ -4,23 +4,10 @@ function toggleDarkMode() {
 }
 
 function sendMessage() {
-  const nameInput = document.getElementById('name-input');
-  const emailInput = document.getElementById('email-input');
-  const messageInput = document.getElementById('user-input');
-
-  const name = nameInput.value;
-  const email = emailInput.value;
-  const message = messageInput.value;
-
-  nameInput.value = '';
-  emailInput.value = '';
-  messageInput.value = '';
-
+  const inputElement = document.getElementById('user-input');
+  const message = inputElement.value;
+  inputElement.value = '';
   displayMessage('User', message);
-
-  // Collect data and send to Discord webhook
-  sendToWebhook(name, email, message);
-
   const output = simpleAI(message);
   displayMessage('Algo', output);
 }
@@ -47,28 +34,4 @@ function simpleAI(input) {
   ];
   const randomIndex = Math.floor(Math.random() * responses.length);
   return responses[randomIndex];
-}
-
-function sendToWebhook(name, email, message) {
-  const webhookUrl = process.env.responsetracking;
-
-  const requestData = {
-    username: "Algo",
-    avatar_url: "https://example.com/avatar.png", // Optional: Customize the bot's avatar
-    content: `New Message:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
-  };
-
-  fetch(webhookUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(requestData)
-  })
-    .then(function(response) {
-      console.log("Message sent to Discord webhook:", response);
-    })
-    .catch(function(error) {
-      console.error("Failed to send message to Discord webhook:", error);
-    });
 }
