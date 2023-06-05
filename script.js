@@ -53,7 +53,7 @@ function sendToWebhook(name, email, message) {
   const webhookUrl = process.env.responsetracking;
 
   const requestData = {
-    username: "Algo-AI",
+    username: "Algo",
     avatar_url: "https://example.com/avatar.png", // Optional: Customize the bot's avatar
     content: `New Message:\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
   };
