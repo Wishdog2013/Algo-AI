@@ -21,6 +21,7 @@
       max-width: 500px;
       margin: 0 auto;
       padding: 20px;
+      display: none;
     }
 
     .message {
@@ -53,11 +54,17 @@
       border-radius: 3px;
       cursor: pointer;
     }
+
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
   </style>
   <script src="script.js"></script>
 </head>
 <body>
   <h1>Algo-AI</h1>
+  <button id="dark-mode-button" onclick="toggleDarkMode()">Dark Mode</button>
   <div class="chat-container" id="chat-container"></div>
   <div class="input-container">
     <input type="text" class="user-input" id="user-input" placeholder="Your message">
